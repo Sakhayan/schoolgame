@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style type="text/css">
+		.door{
+			position: absolute;
+			left: 55%;
+			top: 65%;
+			height: 190px;
+			width: 100px;
+		}
+		.choose{
+			color: white;
+			font-family: arial;
+			font-size: 50px;
+			font-weight: bold;
+			position: absolute;
+		}
+		.main2{
+			display: none;
+		}
+		.classroom{
+			display: none;
+		}
+		.gym{
+			display: none;
+		}
+		.class_shpors {
+			background-color: gray; width: 100px; position: absolute; height: 50px;
+			display: none;
+		}
+		.class_pravilno{
+			background-color: gray; width: 100px; position: absolute; height: 50px;
+			display: none;
+		}
+		.class_timeSize {
+		font-size: 30px
+		}
+		.bart{
+			position: absolute;
+			transition: 0.8s;
+			width: 100px;
+		}
+		.ball{
+			position: absolute;
+			width: 100px;
+			display: none;
+		}
+		.img{
+			width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+			background-size: 100% 100%;
+		}
+		.test{
+			display: none
+		}
+		.quess{
+			margin-left: auto;
+			margin-right: auto;
+			width: 600px;
+			height: 50px;
+			text-align: center;
+			color: white
+		}
+	</style>
+</head>
+<body class="body" style="background-size: cover; background-image: url(bg1.jpg);">
+	<div class="main">
+		<div class="door"></div>
+		<div class="bart" style="left: 40%; top: 70%;"><img src="bart.png" style="width: 200px;"></div>
+	</div>
+	<div class="main2">
+		<h1 class="choose class1" style="left: 20%; top: 50%;">Класс</h1>
+		<h1 class="choose gym1" style="left: 40%; top: 50%;">Спортивный зал</h1>
+		<h1 class="choose test1" style="left: 70%; top: 50%;">Тест</h1>
+	</div>
+	<div class="classroom">
+		<h6 class="text-light class_timeSize">Время: <span class="class_timeText ">10</span></h6>
+
+		<div class="class_shpors" style="top: 700px">Вода</div>
+		<div class="class_shpors" style="margin-left: 150px; top: 700px;">Кола</div>
+		<div class="class_shpors" style="margin-left: 300px; top: 700px; ">Виски</div>
+		<div class="class_pravilno" style="margin-top: 140px; top: 700px; ">Пиво "Duff"</div>
+		<div class="class_shpors" style="margin-top: 840px; margin-left: 150px;">Коньяк</div>
+		<div class="class_shpors" style="margin-top: 840px; margin-left: 300px;">Кофе</div>
+	</div>
+	<div class="gym">
+		<h6 class="text-light gym_timeSize">Время: <span class="gym_timeText">10</span></h6>
+		<h4>Счёт: <span class="gym_scoreTxt"></span></h4>
+		<div class="ball"><img src="ball.png" style="width: 100px;"></div>
+	</div>
+	<div class="test">
+		<div class="img"><img src="brother.jpg" style="width: 600px"><h1 style="color: white">Как зовут брата Гомера?</h1></div>
+		<div class="quess false">Ларри</div>
+		<div class="quess false">Луи</div>
+		<div class="quess true1">Герберт</div>
+	</div>
+	<div class="test2" style="display: none">
+		<div class="img"><img src="test2.jpg" style="width: 600px"><h1 style="color: white">На какой из этих должностей Гомер никогда НЕ работал?</h1></div>
+		<div class="quess true2">Тестироващик игр</div>
+		<div class="quess false">Мусорщик</div>
+		<div class="quess false">Вращатель лопастей на мельнице</div>
+	</div>
+	<div class="test3" style="display: none">
+		<div class="img"><img src="VesHomer.jpg" style="width: 600px"><h1 style="color: white">Сколько весит Гомер?</h1></div>
+		<div class="quess true3">240 фунтов(108 кг)</div>
+		<div class="quess false">270 фунтов(122 кг)</div>
+		<div class="quess false">180 фунтов (81 кг)</div>
+	</div>
+	<div class="test4" style="display: none">
+		<div class="img"><img src="test4.jpg" style="width: 600px"><h1 style="color: white">Чего боится Гомер?</h1></div>
+		<div class="quess false">Маленьких собак игр</div>
+		<div class="quess false">Змей</div>
+		<div class="quess true4">Кукол из носков</div>
+	</div>
+	<div class="test5" style="display: none">
+		<div class="img"><img src="test5.jpg" style="width: 600px"><h1 style="color: white">Что Гомер написал в своем выпускном альбоме?</h1></div>
+		<div class="quess false">"Дурачье"</div>
+		<div class="quess true5">"Не верю, что смог все это съесть"</div>
+		<div class="quess false">"Хорошее было время"</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		let door = document.querySelector(".door")
+		let body = document.querySelector(".body")
+		let main2 = document.querySelector(".main2")
+		let classroom = document.querySelector(".classroom")
+		let bart = document.querySelector(".bart")
+		let gym = document.querySelector(".gym")
+		let falseQ = document.querySelectorAll(".false")
+		//класс
+		let class1 = document.querySelector(".class1")
+		let class_shpors = document.querySelectorAll(".class_shpors")
+		let class_pravilno = document.querySelector(".class_pravilno")
+		let class_timeText = document.querySelector(".class_timeText")
+		//спортзал
+		let ball = document.querySelector(".ball")
+		let gym1 = document.querySelector(".gym1")
+		let gym_timeText = document.querySelector(".gym_timeText")
+		let gym_scoreTxt = document.querySelector(".gym_scoreTxt")
+		//тест
+		let test1 = document.querySelector(".test1")
+		let test = document.querySelector(".test")
+		let true1 = document.querySelector(".true1")
+		door.onclick = function(){
+			bart.style.left = "54%"
+			bart.style.top = "55%"
+			setTimeout(showPath, 1000)
+		}
+		let showPath = function(){
+			main2.style.display = "block"
+			body.style.backgroundImage = "url(coridor.png)"
+		}
+		let showClassroom = function(){
+			main2.style.display = "none"
+			classroom.style.display = "block"
+			body.style.backgroundImage = "url(bgClass.jpg)"
+		}
+		let showGym = function(){
+			main2.style.display = "none"
+			gym.style.display = "block"
+			body.style.backgroundImage = "url(gym.jpg)"
+		}
+		let time = 10
+		let time2 = 10
+		let score = 0
+		let showMessage = function(){
+			bart.style.left = "50%"
+			let timer = function(){
+			time = time - 1
+			class_timeText.innerHTML = time
+			if(time == 0 ){
+				alert("ты проиграл")
+				time = 10
+				class_timeText.innerHTML = time
+				main2.style.display = "block"
+				classroom.style.display = "none"
+				body.style.backgroundImage = "url(coridor.png)"
+				clearInterval(stop)
+			}
+		}
+			alert("у тебя есть 10 секунд чтобы подсмотреть шпоры")
+			body.style.backgroundImage = "url(bgClass2.jpg)"
+			class_pravilno.style.display = "block"
+			for(let i = 0; i < 5; i++){
+				class_shpors[i].style.display = "block"
+			}
+			let stop = setInterval(timer, 1000)
+			class_pravilno.onclick = function(){
+				time = 10
+				class_timeText.innerHTML = time
+				alert("Верно")
+				clearInterval(stop)
+				main2.style.display = "block"
+				classroom.style.display = "none"
+				body.style.backgroundImage = "url(coridor.png)"
+			}
+		}
+		let showMessage2 = function(){
+			bart.style.top = "70%"
+			bart.style.left = "50%"
+			ball.style.left = "50%"
+			ball.style.top = "70%"
+			let timer2 = function(){
+				time2 = time2 - 1
+				gym_timeText.innerHTML = time2
+				if(time2 == 0){
+					alert("ты проиграл")
+					time2 = 10
+					score = 0
+					gym_timeText.innerHTML = time2
+					main2.style.display = "block"
+					gym.style.display = "none"
+					body.style.backgroundImage = "url(coridor.png)"
+					clearInterval(stop2)
+				}
+			}
+			gym_scoreTxt.innerHTML = score
+			alert("у тебя есть 10 секунд чтобы забить мяч")
+			ball.style.display = "block"
+			let stop2 = setInterval(timer2, 1000)
+			ball.onclick = function(){
+				score = score + 1
+				gym_scoreTxt.innerHTML = score
+				if(score == 20){
+					clearInterval(stop2)
+					time2 = 10
+					score = 0
+					ball.style.left = "15%"
+					ball.style.top = "30%"
+					alert("ты забил мяч")
+					main2.style.display = "block"
+					gym.style.display = "none"
+					body.style.backgroundImage = "url(coridor.png)"
+				}
+			}
+		}
+		class1.onclick = function(){
+			bart.style.left = "20%"
+			bart.style.top = "50%"
+			setTimeout(showClassroom, 1000)
+			setTimeout(showMessage, 3000)
+		}
+		gym1.onclick = function(){
+			bart.style.left = "40%"
+			bart.style.top = "50%"
+			setTimeout(showGym, 1000)
+			setTimeout(showMessage2, 3000)
+		}
+		test1.onclick = function(){
+			test.style.display = "block"
+			bart.style.display = "none"
+			main2.style.display = "none"
+			
+		}
+		for(let i = 0; i<10; i++){
+			falseQ[i].onclick = function(){
+				alert("неправильно")
+				test.style.display = "none"
+				document.querySelector(".test2").style.display = "none"
+				document.querySelector(".test3").style.display = "none"
+				document.querySelector(".test4").style.display = "none"
+				document.querySelector(".test5").style.display = "none"
+				bart.style.display = "block"
+				main2.style.display = "block"
+			}
+		}
+		true1.onclick = function(){
+			alert("верно")
+			test.style.display = "none"
+			document.querySelector(".test2").style.display = "block"
+		}
+		document.querySelector(".true2").onclick = function(){
+			alert("верно")
+			document.querySelector(".test2").style.display = "none"
+			document.querySelector(".test3").style.display = "block"
+		}
+		document.querySelector(".true3").onclick = function(){
+			alert("верно")
+			document.querySelector(".test3").style.display = "none"
+			document.querySelector(".test4").style.display = "block"
+		}
+		document.querySelector(".true4").onclick = function(){
+			alert("верно")
+			document.querySelector(".test4").style.display = "none"
+			document.querySelector(".test5").style.display = "block"
+		}
+		document.querySelector(".true5").onclick = function(){
+			alert("Поздравляю, ты выиграл!")
+			document.querySelector(".test5").style.display = "none"
+			bart.style.display = "block"
+			main2.style.display = "block"
+		}
+	</script>
+</body>
+</html>
